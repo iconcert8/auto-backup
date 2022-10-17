@@ -1,0 +1,25 @@
+{
+  "backUpMaxHistory": 10,
+  "backUpPeriodMinutes": 10,
+  "tempZipFolder": "C:\\dev\\projects\\auto-backup/backup",
+  "backUpZipFileNamePattern": "yyyyMMdd-HH-mm-ss",
+  "backUpDirectoryPath": {
+    "paths": [
+      "backup"
+    ]
+  },
+  "sourceFiles": [
+    {
+      "name": "pom.xml",
+      "path": {
+        "prefix": "C:",
+        "paths": [
+          "Users",
+          "user",
+          "Desktop",
+          "pom"
+        ]
+      }
+    }
+  ]
+}
