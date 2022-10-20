@@ -2,6 +2,9 @@
 build/
 out/
 
+# credential file
+google-drive-credential.json
+
 # Compiled class file
 *.class
 
