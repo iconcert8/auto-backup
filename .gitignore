@@ -3,7 +3,8 @@ build/
 out/
 
 # credential file
-google-drive-credential.json
+src/main/resources/google-drive-credential.json
+tokens/
 
 # Compiled class file
 *.class

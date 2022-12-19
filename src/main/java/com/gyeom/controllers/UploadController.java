@@ -18,6 +18,7 @@ import java.util.TimerTask;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.function.Predicate;
 
 public class UploadController {
     private final static Logger log = LoggerFactory.getLogger(UploadController.class);
@@ -58,12 +59,22 @@ public class UploadController {
      * Functions that upload regularly
      */
     public void startUpload(DirectoryPath dest, List<FileVO> fileVOS, int periodMillisecond) throws InterruptedException {
+//        uploadLoopActive = true;
+//        while (uploadLoopActive) {
+//            upload(dest, fileVOS);
+//            try {
+//                Thread.sleep(periodMillisecond);
+//            } catch (InterruptedException e) {
+//                stopUpload();
+//                break;
+//            }
+//        }
+
         if (uploadLoopThread != null) {
             log.warn("Uploading loop is already running.");
             return;
         }
-
-        //TODO: check period min value
+        
         uploadLoopActive = true;
         uploadLoopThread = new Thread(
                 () -> {
@@ -77,6 +88,7 @@ public class UploadController {
                     }
                 }
         );
+        uploadLoopThread.setDaemon(true);
         uploadLoopThread.start();
         uploadLoopThread.join();
         uploadLoopThread = null;

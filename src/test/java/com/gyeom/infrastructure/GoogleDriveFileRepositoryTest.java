@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GoogleDriveFileRepositoryTest {
     static GoogleDriveFileRepository googleDrive;
@@ -25,8 +25,13 @@ class GoogleDriveFileRepositoryTest {
     }
 
     @Test
-    void getCredential() throws GeneralSecurityException, IOException {
-        assertNotNull(googleDrive.getCredentials());
+    void getCredential() {
+        try {
+            assertNotNull(googleDrive.getCredentials());
+        } catch (IOException | GeneralSecurityException e) {
+            System.out.println("error");
+            fail();
+        }
     }
 
     @Test

@@ -11,7 +11,6 @@ import java.util.stream.Stream;
 public class FunctionalTest {
     private final static Logger log = LoggerFactory.getLogger(FunctionalTest.class);
 
-
     @Test
     void executeOrderTest() {
         int[] array = {1, 2, 3, 4};

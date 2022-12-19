@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         log.info("----------- Back Up Program -------------");
+        log.info("Hello Soo-bin!");
         log.info("Loading configuration...");
         AppConfiguration.getInstance().read();
 
